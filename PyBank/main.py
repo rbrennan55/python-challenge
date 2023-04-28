@@ -76,8 +76,6 @@ outputfilepath = os.path.join('.', 'analysis', 'budget_data_analysis.txt')
 with open(outputfilepath, 'w') as outputfile:
 
     # Initialize csv.writer
-    #outputwriter = writer(outputfile)
-
     outputfile.write("\nFinancial Analysis\n\n")
     for dash in range(20):
       outputfile.write("-")
