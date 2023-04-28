@@ -37,7 +37,7 @@ def printDashes(num):
     # Prints number of defined 'Dashes' as seperators
     for dash in range(20):
         print("-", end = " ")
-    print("\n\n")
+    print("\n")
     return
 
 # Initialize variables to hold values
@@ -104,23 +104,26 @@ with open(outputfilepath, 'w') as outputfile:
       outputfile.write("-")
     
     # Writes the total numnber of votes
-    outputfile.write(f"\n\nTotal Votes: {total_votes}\n")
+    outputfile.write(f"\n\nTotal Votes: {total_votes}\n\n")
     
     # Writes number of defined 'Dashes' as seperators
     for dash in range(25):
       outputfile.write("-")
+    outputfile.write("\n")
    
     #while loop for candiate name, percent vote and totall votes per candiate
     for key, value in candidate_results.items():
         candidate_percent = getVotePercent(value,total_votes)
         outputfile.write(f"\n{key}: {candidate_percent}% ({value})\n")
-    
+    outputfile.write("\n")
     # Wites number of defined 'Dashes' as seperators
     for dash in range(25):
       outputfile.write("-")
 
     # Writes the winner
-    outputfile.write(f"\n\nWinner: {candidate_winner}\n")
+    outputfile.write(f"\n\nWinner: {candidate_winner}\n\n")
+    for dash in range(25):
+      outputfile.write("-")
     # Closes file
     outputfile.close()
 
@@ -131,7 +134,7 @@ print("\nElection Results\n")
 printDashes(20)
 
 # Prints the total numnber of votes
-print(f"Total Votes: {total_votes}\n\n")
+print(f"Total Votes: {total_votes}\n")
 
 # Prints number of defined 'Dashes' as seperators
 printDashes(20)
@@ -147,3 +150,4 @@ printDashes(20)
 
 # Prints the winner
 print(f"Winner: {candidate_winner}\n")
+printDashes(20)
